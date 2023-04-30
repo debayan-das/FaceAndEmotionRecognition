@@ -12,7 +12,7 @@ from PIL import Image
 # load model
 model = model_from_json(open("Resources/Data/fer.json", "r").read())
 # load weights
-model.load_weights('Resources/Datafer.h5')
+model.load_weights('Resources/Data/fer.h5')
 
 face_app = Flask(__name__)
 face_app.secret_key = 'face'
