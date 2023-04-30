@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Face App</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-8 col-lg-10  offset-2 offset-lg-1">
+				<h2 class="mt-5">Face App</h2>
+				<form class="my-5" action="{{ url_for('tasks') }}" method="post">
+					<input class="btn btn-success" type="submit" value="Stop/Start Camera" name="stop" />
+					<input class="btn btn-primary" type="submit" value="Detect Emotion" name="emotion" />
+					<input class="btn btn-info" type="submit" value="Recognize Face" name="face" />
+					<a href="{{ url_for('add_face') }}">
+						<input class="btn btn-secondary" value="Add Face" name="add" />
+					</a>
+				</form>
+				<img class="col-12" src="{{ url_for('video_feed') }}" height="70%">
+				<h3 class="mt-5" style="font-family:courier;">Instructions:</h3>
+				<ol style="font-family:courier;">
+					<li>Stop/Start Camera -- Toggle between stop or start live streaming</li>
+					<li>Detect Emotion -- Detect the emotion of faces on camera</li>
+					<li>Recognize Face -- Identify the person on camera</li>
+					<li>Add Face -- Add your identity</li>
+				</ol>
+
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
